@@ -143,8 +143,8 @@ def save_checkpoint(model, clip=None, vae=None, clip_vision=None, filename_prefi
         metadata["modelspec.title"] = "{} {}".format(filename, counter)
 
     #TODO:
-    # "stable-diffusion-v1", "stable-diffusion-v1-inpainting", "stable-diffusion-v2-512",
-    # "stable-diffusion-v2-768-v", "stable-diffusion-v2-unclip-l", "stable-diffusion-v2-unclip-h",
+    # "SD-v1", "SD-v1-inpainting", "SD-v2-512",
+    # "SD-v2-768-v", "SD-v2-unclip-l", "SD-v2-unclip-h",
     # "v2-inpainting"
 
     if model.model.model_type == ldm_patched.modules.model_base.ModelType.EPS:

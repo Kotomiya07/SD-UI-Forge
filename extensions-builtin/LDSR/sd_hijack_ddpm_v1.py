@@ -1,4 +1,4 @@
-# This script is copied from the compvis/stable-diffusion repo (aka the SD V1 repo)
+# This script is copied from the compvis/SD repo (aka the SD V1 repo)
 # Original filename: ldm/models/diffusion/ddpm.py
 # The purpose to reinstate the old DDPM logic which works with VQ, whereas the V2 one doesn't
 # Some models such as LDSR require VQ to work correctly

@@ -176,7 +176,7 @@ def get_available_vram():
         return psutil.virtual_memory().available
 
 
-# see https://github.com/basujindal/stable-diffusion/pull/117 for discussion
+# see https://github.com/basujindal/SD/pull/117 for discussion
 def split_cross_attention_forward_v1(self, x, context=None, mask=None, **kwargs):
     h = self.heads
 
@@ -217,7 +217,7 @@ def split_cross_attention_forward_v1(self, x, context=None, mask=None, **kwargs)
     return self.to_out(r2)
 
 
-# taken from https://github.com/Doggettx/stable-diffusion and modified
+# taken from https://github.com/Doggettx/SD and modified
 def split_cross_attention_forward(self, x, context=None, mask=None, **kwargs):
     h = self.heads
 

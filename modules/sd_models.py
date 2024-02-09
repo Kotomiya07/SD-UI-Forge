@@ -24,7 +24,7 @@ from ldm_patched.modules import model_management as model_management
 import ldm_patched.modules.model_patcher
 
 
-model_dir = "Stable-diffusion"
+model_dir = "SD"
 model_path = os.path.abspath(os.path.join(paths.models_path, model_dir))
 
 checkpoints_list = {}
@@ -418,7 +418,7 @@ def enable_midas_autodownload():
 
     midas_path = os.path.join(paths.models_path, 'midas')
 
-    # stable-diffusion-stability-ai hard-codes the midas model path to
+    # SD-stability-ai hard-codes the midas model path to
     # a location that differs from where other scripts using this model look.
     # HACK: Overriding the path here.
     for k, v in midas.api.ISL_PATHS.items():

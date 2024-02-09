@@ -247,7 +247,7 @@
       });
     }
 
-    // From https://github.com/huchenlei/stable-diffusion-ps-pea/blob/main/src/Photopea.ts
+    // From https://github.com/huchenlei/SD-ps-pea/blob/main/src/Photopea.ts
     postMessageToPhotopea(message) {
       return new Promise((resolve, reject) => {
         const responseDataPieces = [];
@@ -286,7 +286,7 @@
       });
     }
 
-    // From https://github.com/huchenlei/stable-diffusion-ps-pea/blob/main/src/Photopea.ts
+    // From https://github.com/huchenlei/SD-ps-pea/blob/main/src/Photopea.ts
     async invoke(func, ...args) {
       await this.navigateIframe();
       const message = `${func.toString()} ${func.name}(${args.map(arg => JSON.stringify(arg)).join(',')});`;
