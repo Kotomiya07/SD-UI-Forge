@@ -129,7 +129,7 @@ class ControlNetUiGroup(object):
 
     tooltips = {
         "🔄": "Refresh",
-        "\u2934": "Send dimensions to stable diffusion",
+        "\u2934": "Send dimensions to SD",
         "💥": "Run preprocessor",
         "📝": "Open new canvas",
         "📷": "Enable webcam",

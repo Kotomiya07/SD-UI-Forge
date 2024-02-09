@@ -33,7 +33,7 @@ def pad_cond(tensor, repeats, empty):
 
 class CFGDenoiser(torch.nn.Module):
     """
-    Classifier free guidance denoiser. A wrapper for stable diffusion model (specifically for unet)
+    Classifier free guidance denoiser. A wrapper for SD model (specifically for unet)
     that can take a noisy picture and produce a noise-free picture using two guidances (prompts)
     instead of one. Originally, the second prompt is just an empty string, but we use non-empty
     negative prompt.

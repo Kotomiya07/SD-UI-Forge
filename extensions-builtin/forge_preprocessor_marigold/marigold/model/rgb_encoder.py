@@ -9,7 +9,7 @@ from diffusers import AutoencoderKL
 
 class RGBEncoder(nn.Module):
     """
-    The encoder of pretrained Stable Diffusion VAE
+    The encoder of pretrained SD VAE
     """
     
     def __init__(self, pretrained_path, subfolder=None) -> None:

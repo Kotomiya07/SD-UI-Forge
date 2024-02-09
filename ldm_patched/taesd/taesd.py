@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tiny AutoEncoder for Stable Diffusion
+Tiny AutoEncoder for SD
 (DNN for encoding / decoding SD's latent space)
 """
 import torch

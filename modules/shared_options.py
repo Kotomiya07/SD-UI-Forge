@@ -23,7 +23,7 @@ restricted_opts = {
 }
 
 categories.register_category("saving", "Saving images")
-categories.register_category("sd", "Stable Diffusion")
+categories.register_category("sd", "SD")
 categories.register_category("ui", "User Interface")
 categories.register_category("system", "System")
 categories.register_category("postprocessing", "Postprocessing")
@@ -147,8 +147,8 @@ options_templates.update(options_section(('training', "Training", "training"), {
     "training_tensorboard_flush_every": OptionInfo(120, "How often, in seconds, to flush the pending tensorboard events and summaries to disk."),
 }))
 
-options_templates.update(options_section(('sd', "Stable Diffusion", "sd"), {
-    "sd_model_checkpoint": OptionInfo(None, "Stable Diffusion checkpoint", gr.Dropdown, lambda: {"choices": shared_items.list_checkpoint_tiles(shared.opts.sd_checkpoint_dropdown_use_short)}, refresh=shared_items.refresh_checkpoints, infotext='Model hash'),
+options_templates.update(options_section(('sd', "SD", "sd"), {
+    "sd_model_checkpoint": OptionInfo(None, "SD checkpoint", gr.Dropdown, lambda: {"choices": shared_items.list_checkpoint_tiles(shared.opts.sd_checkpoint_dropdown_use_short)}, refresh=shared_items.refresh_checkpoints, infotext='Model hash'),
     "sd_checkpoints_limit": OptionInfo(1, "Maximum number of checkpoints loaded at the same time", gr.Slider, {"minimum": 1, "maximum": 10, "step": 1}),
     "sd_checkpoints_keep_in_cpu": OptionInfo(True, "Only keep one model on device").info("will keep models other than the currently used one in RAM rather than VRAM"),
     "sd_checkpoint_cache": OptionInfo(0, "Checkpoints to cache in RAM", gr.Slider, {"minimum": 0, "maximum": 10, "step": 1}).info("obsolete; set to 0 and use the two settings above instead"),
@@ -164,7 +164,7 @@ options_templates.update(options_section(('sd', "Stable Diffusion", "sd"), {
     "hires_fix_refiner_pass": OptionInfo("second pass", "Hires fix: which pass to enable refiner for", gr.Radio, {"choices": ["first pass", "second pass", "both passes"]}, infotext="Hires refiner"),
 }))
 
-options_templates.update(options_section(('sdxl', "Stable Diffusion XL", "sd"), {
+options_templates.update(options_section(('sdxl', "SD XL", "sd"), {
     "sdxl_crop_top": OptionInfo(0, "crop top coordinate"),
     "sdxl_crop_left": OptionInfo(0, "crop left coordinate"),
     "sdxl_refiner_low_aesthetic_score": OptionInfo(2.5, "SDXL low aesthetic score", gr.Number).info("used for refiner model negative prompt"),
@@ -174,7 +174,7 @@ options_templates.update(options_section(('sdxl', "Stable Diffusion XL", "sd"), 
 options_templates.update(options_section(('vae', "VAE", "sd"), {
     "sd_vae_explanation": OptionHTML("""
 <abbr title='Variational autoencoder'>VAE</abbr> is a neural network that transforms a standard <abbr title='red/green/blue'>RGB</abbr>
-image into latent space representation and back. Latent space representation is what stable diffusion is working on during sampling
+image into latent space representation and back. Latent space representation is what SD is working on during sampling
 (i.e. when the progress bar is between empty and full). For txt2img, VAE is used to create a resulting image after the sampling is finished.
 For img2img, VAE is used to process user's input image before the sampling, and to create an image after sampling.
 """),

@@ -185,7 +185,7 @@ def read_image_dir(img_dir: str, suffixes=('.png', '.jpg', '.jpeg', '.webp')) ->
 
 def align_dim_latent(x: int) -> int:
     """ Align the pixel dimension (w/h) to latent dimension.
-    Stable diffusion 1:8 ratio for latent/pixel, i.e.,
+    SD 1:8 ratio for latent/pixel, i.e.,
     1 latent unit == 8 pixel unit."""
     return (x // 8) * 8
 

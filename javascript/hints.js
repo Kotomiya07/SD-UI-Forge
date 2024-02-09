@@ -33,7 +33,7 @@ var titles = {
     "Resize and fill": "Resize the image so that entirety of image is inside target resolution. Fill empty space with image's colors.",
 
     "Mask blur": "How much to blur the mask before processing, in pixels.",
-    "Masked content": "What to put inside the masked area before processing it with Stable Diffusion.",
+    "Masked content": "What to put inside the masked area before processing it with SD.",
     "fill": "fill it with colors of the image",
     "original": "keep whatever was there originally",
     "latent noise": "fill it with latent space noise",

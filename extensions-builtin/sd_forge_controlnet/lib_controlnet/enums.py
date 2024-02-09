@@ -29,7 +29,7 @@ class HiResFixOption(Enum):
 
 
 class StableDiffusionVersion(Enum):
-    """The version family of stable diffusion model."""
+    """The version family of SD model."""
 
     UNKNOWN = 0
     SD1x = 1
@@ -38,7 +38,7 @@ class StableDiffusionVersion(Enum):
 
     @staticmethod
     def detect_from_model_name(model_name: str) -> "StableDiffusionVersion":
-        """Based on the model name provided, guess what stable diffusion version it is.
+        """Based on the model name provided, guess what SD version it is.
         This might not be accurate without actually inspect the file content.
         """
         if any(f"sd{v}" in model_name.lower() for v in ("14", "15", "16")):

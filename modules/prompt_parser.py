@@ -138,7 +138,7 @@ ScheduledPromptConditioning = namedtuple("ScheduledPromptConditioning", ["end_at
 
 class SdConditioning(list):
     """
-    A list with prompts for stable diffusion's conditioner model.
+    A list with prompts for SD's conditioner model.
     Can also specify width and height of created image - SDXL needs it.
     """
     def __init__(self, prompts, is_negative_prompt=False, width=None, height=None, copy_from=None):

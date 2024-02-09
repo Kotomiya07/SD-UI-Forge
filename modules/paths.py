@@ -23,7 +23,7 @@ def mute_sdxl_imports():
 # data_path = cmd_opts_pre.data
 sys.path.insert(0, script_path)
 
-# search for directory of stable diffusion in following places
+# search for directory of SD in following places
 sd_path = None
 possible_sd_paths = [os.path.join(script_path, 'repositories/stable-diffusion-stability-ai'), '.', os.path.dirname(script_path)]
 for possible_sd_path in possible_sd_paths:
@@ -31,13 +31,13 @@ for possible_sd_path in possible_sd_paths:
         sd_path = os.path.abspath(possible_sd_path)
         break
 
-assert sd_path is not None, f"Couldn't find Stable Diffusion in any of: {possible_sd_paths}"
+assert sd_path is not None, f"Couldn't find SD in any of: {possible_sd_paths}"
 
 mute_sdxl_imports()
 
 path_dirs = [
-    (sd_path, 'ldm', 'Stable Diffusion', []),
-    (os.path.join(sd_path, '../generative-models'), 'sgm', 'Stable Diffusion XL', ["sgm"]),
+    (sd_path, 'ldm', 'SD', []),
+    (os.path.join(sd_path, '../generative-models'), 'sgm', 'SD XL', ["sgm"]),
     (os.path.join(sd_path, '../BLIP'), 'models/blip.py', 'BLIP', []),
     (os.path.join(sd_path, '../k-diffusion'), 'k_diffusion/sampling.py', 'k_diffusion', ["atstart"]),
 ]
@@ -53,7 +53,7 @@ for d, must_exist, what, options in path_dirs:
         if "atstart" in options:
             sys.path.insert(0, d)
         elif "sgm" in options:
-            # Stable Diffusion XL repo has scripts dir with __init__.py in it which ruins every extension's scripts dir, so we
+            # SD XL repo has scripts dir with __init__.py in it which ruins every extension's scripts dir, so we
             # import sgm and remove it from sys.path so that when a script imports scripts.something, it doesbn't use sgm's scripts dir.
 
             sys.path.insert(0, d)

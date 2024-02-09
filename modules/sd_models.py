@@ -509,9 +509,9 @@ class SdModelData:
                     load_model()
 
                 except Exception as e:
-                    errors.display(e, "loading stable diffusion model", full_traceback=True)
+                    errors.display(e, "loading SD model", full_traceback=True)
                     print("", file=sys.stderr)
-                    print("Stable diffusion model failed to load", file=sys.stderr)
+                    print("SD model failed to load", file=sys.stderr)
                     self.sd_model = None
 
         return self.sd_model
