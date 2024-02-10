@@ -1,1 +1,1 @@
-always_disabled_extensions = ['sd-webui-controlnet']
+always_disabled_extensions = ['sd-UI-controlnet']

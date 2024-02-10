@@ -15,7 +15,7 @@ checksum_token = "DontStealMyGamePlz__WINNERS_DONT_USE_DRUGS__DONT_COPY_THAT_FLO
 environment_whitelist = {
     "GIT",
     "INDEX_URL",
-    "WEBUI_LAUNCH_LIVE_OUTPUT",
+    "UI_LAUNCH_LIVE_OUTPUT",
     "GRADIO_ANALYTICS_ENABLED",
     "PYTHONPATH",
     "TORCH_INDEX_URL",

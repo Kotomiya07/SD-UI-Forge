@@ -1,4 +1,4 @@
-# this scripts installs necessary requirements and launches main program in webui.py
+# this scripts installs necessary requirements and launches main program in UI.py
 import logging
 import re
 import subprocess
@@ -28,7 +28,7 @@ index_url = os.environ.get('INDEX_URL', "")
 dir_repos = "repositories"
 
 # Whether to default to printing command output
-default_command_live = (os.environ.get('WEBUI_LAUNCH_LIVE_OUTPUT') == "1")
+default_command_live = (os.environ.get('UI_LAUNCH_LIVE_OUTPUT') == "1")
 
 os.environ.setdefault('GRADIO_ANALYTICS_ENABLED', 'False')
 
@@ -54,11 +54,11 @@ This program is tested with 3.10.6 Python, but you have {major}.{minor}.{micro}.
 If you encounter an error with "RuntimeError: Couldn't install torch." message,
 or any other error regarding unsuccessful package (library) installation,
 please downgrade (or upgrade) to the latest version of 3.10 Python
-and delete current Python and "venv" folder in WebUI's directory.
+and delete current Python and "venv" folder in UI's directory.
 
 You can download 3.10 Python from here: https://www.python.org/downloads/release/python-3106/
 
-{"Alternatively, use a binary release of WebUI: https://github.com/Kotomiya07/SD-UI/releases" if is_windows else ""}
+{"Alternatively, use a binary release of UI: https://github.com/Kotomiya07/SD-UI/releases" if is_windows else ""}
 
 Use --skip-python-version-check to suppress this warning.
 """)
@@ -400,9 +400,9 @@ def prepare_environment():
     blip_commit_hash = os.environ.get('BLIP_COMMIT_HASH', "48211a1594f1321b00f14c9f7a5b4813144b2fb9")
 
     try:
-        # the existence of this file is a signal to webui.sh/bat that webui needs to be restarted when it stops execution
+        # the existence of this file is a signal to UI.sh/bat that UI needs to be restarted when it stops execution
         os.remove(os.path.join(script_path, "tmp", "restart"))
-        os.environ.setdefault('SD_WEBUI_RESTARTING', '1')
+        os.environ.setdefault('SD_UI_RESTARTING', '1')
     except OSError:
         pass
 
@@ -505,11 +505,11 @@ def configure_for_tests():
 
 def start():
     print(f"Launching {'API server' if '--nowebui' in sys.argv else 'Web UI'} with arguments: {' '.join(sys.argv[1:])}")
-    import webui
+    import UI
     if '--nowebui' in sys.argv:
-        webui.api_only()
+        UI.api_only()
     else:
-        webui.webui()
+        UI.UI()
 
     from modules_forge import main_thread
 

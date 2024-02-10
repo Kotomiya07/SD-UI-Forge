@@ -32,7 +32,7 @@ class A1111Context:
     txt2img_submit_button: Optional[gr.components.IOComponent] = None
     img2img_submit_button: Optional[gr.components.IOComponent] = None
 
-    # Slider controls from A1111 WebUI.
+    # Slider controls from A1111 UI.
     txt2img_w_slider: Optional[gr.components.IOComponent] = None
     txt2img_h_slider: Optional[gr.components.IOComponent] = None
     img2img_w_slider: Optional[gr.components.IOComponent] = None
@@ -109,7 +109,7 @@ class A1111Context:
         }
         elem_id = getattr(component, "elem_id", None)
         # Do not set component if it has already been set.
-        # https://github.com/Mikubill/sd-webui-controlnet/issues/2587
+        # https://github.com/Mikubill/sd-UI-controlnet/issues/2587
         if elem_id in id_mapping and getattr(self, id_mapping[elem_id]) is None:
             setattr(self, id_mapping[elem_id], component)
             logger.debug(f"Setting {elem_id}.")

@@ -333,7 +333,7 @@ def remove_callbacks_for_function(callback_func):
 
 
 def on_app_started(callback):
-    """register a function to be called when the webui started, the gradio `Block` component and
+    """register a function to be called when the UI started, the gradio `Block` component and
     fastapi `FastAPI` object are passed as the arguments"""
     add_callback(callback_map['callbacks_app_started'], callback)
 

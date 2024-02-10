@@ -15,7 +15,7 @@ def add_classes_to_gradio_component(comp):
 
 
 def IOComponent_init(self, *args, **kwargs):
-    self.webui_tooltip = kwargs.pop('tooltip', None)
+    self.UI_tooltip = kwargs.pop('tooltip', None)
 
     if scripts.scripts_current is not None:
         scripts.scripts_current.before_component(self, **kwargs)
@@ -37,9 +37,9 @@ def IOComponent_init(self, *args, **kwargs):
 def Block_get_config(self):
     config = original_Block_get_config(self)
 
-    webui_tooltip = getattr(self, 'webui_tooltip', None)
-    if webui_tooltip:
-        config["webui_tooltip"] = webui_tooltip
+    UI_tooltip = getattr(self, 'UI_tooltip', None)
+    if UI_tooltip:
+        config["UI_tooltip"] = UI_tooltip
 
     config.pop('example_inputs', None)
 

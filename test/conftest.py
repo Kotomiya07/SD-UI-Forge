@@ -9,7 +9,7 @@ test_outputs_path = os.path.dirname(__file__) + "/test_outputs"
 
 def pytest_configure(config):
     # We don't want to fail on Py.test command line arguments being
-    # parsed by webui:
+    # parsed by UI:
     os.environ.setdefault("IGNORE_CMD_ARGS_ERRORS", "1")
 
 
@@ -33,4 +33,4 @@ def mask_basic_image_base64() -> str:
 
 @pytest.fixture(scope="session")
 def initialize() -> None:
-    import webui  # noqa: F401
+    import UI  # noqa: F401

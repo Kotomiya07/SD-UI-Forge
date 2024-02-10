@@ -40,7 +40,7 @@ options_templates = None
 opts = None
 restricted_opts = None
 
-sd_model: sd_models_types.WebuiSdModel = None
+sd_model: sd_models_types.UISdModel = None
 
 settings_components = None
 """assinged from ui.py, a mapping on setting names to gradio components repsponsible for those settings"""

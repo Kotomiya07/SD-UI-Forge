@@ -90,7 +90,7 @@ def initialize():
 
 def initialize_rest(*, reload_script_modules=False):
     """
-    Called both from initialize() and when reloading the webui.
+    Called both from initialize() and when reloading the UI.
     """
     from modules.shared_cmd_options import cmd_opts
 

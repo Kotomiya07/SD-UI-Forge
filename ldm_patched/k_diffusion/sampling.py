@@ -755,7 +755,7 @@ def sample_lcm(model, x, sigmas, extra_args=None, callback=None, disable=None, n
 
 @torch.no_grad()
 def sample_heunpp2(model, x, sigmas, extra_args=None, callback=None, disable=None, s_churn=0., s_tmin=0., s_tmax=float('inf'), s_noise=1.):
-    # From MIT licensed: https://github.com/Carzit/sd-webui-samplers-scheduler/
+    # From MIT licensed: https://github.com/Carzit/sd-UI-samplers-scheduler/
     extra_args = {} if extra_args is None else extra_args
     s_in = x.new_ones([x.shape[0]])
     s_end = sigmas[-1]

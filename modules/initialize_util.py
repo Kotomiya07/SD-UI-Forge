@@ -98,7 +98,7 @@ def validate_tls_options():
             print(f"Invalid path to TLS certfile: '{cmd_opts.tls_certfile}'")
     except TypeError:
         cmd_opts.tls_keyfile = cmd_opts.tls_certfile = None
-        print("TLS setup invalid, running webui without TLS")
+        print("TLS setup invalid, running UI without TLS")
     else:
         print("Running with TLS")
     startup_timer.record("TLS")
