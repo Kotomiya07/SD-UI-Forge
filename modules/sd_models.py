@@ -161,10 +161,8 @@ def list_models():
             "https://huggingface.co/cagliostrolab/animagine-xl-3.0/resolve/main/animagine-xl-3.0.safetensors"
         ]    
 
-    model_list = [
-        modelloader.load_models(model_path=model_path, model_url=model_url[0], command_path=shared.cmd_opts.ckpt_dir, ext_filter=[".ckpt", ".safetensors"], download_name="realisticVisionV51_v51VAE.safetensors", ext_blacklist=[".vae.ckpt", ".vae.safetensors"]),
-        modelloader.load_models(model_path=model_path, model_url=model_url[1], command_path=shared.cmd_opts.ckpt_dir, ext_filter=[".ckpt", ".safetensors"], download_name="animagine-xl-3.0.safetensors", ext_blacklist=[".vae.ckpt", ".vae.safetensors"]),
-    ]
+    model_list = modelloader.load_models(model_path=model_path, model_url=model_url[0], command_path=shared.cmd_opts.ckpt_dir, ext_filter=[".ckpt", ".safetensors"], download_name="realisticVisionV51_v51VAE.safetensors", ext_blacklist=[".vae.ckpt", ".vae.safetensors"])
+    model_list = modelloader.load_models(model_path=model_path, model_url=model_url[1], command_path=shared.cmd_opts.ckpt_dir, ext_filter=[".ckpt", ".safetensors"], download_name="animagine-xl-3.0.safetensors", ext_blacklist=[".vae.ckpt", ".vae.safetensors"])
 
     if os.path.exists(cmd_ckpt):
         checkpoint_info = CheckpointInfo(cmd_ckpt)
