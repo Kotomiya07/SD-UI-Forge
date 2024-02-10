@@ -162,16 +162,16 @@ def api_only():
     Thread(target=api_only_worker, daemon=True).start()
 
 
-def UI():
+def ui():
     Thread(target=UI_worker, daemon=True).start()
 
 
 if __name__ == "__main__":
     from modules.shared_cmd_options import cmd_opts
 
-    if cmd_opts.noUI:
+    if cmd_opts.nowebui:
         api_only()
     else:
-        UI()
+        ui()
 
     main_thread.loop()

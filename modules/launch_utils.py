@@ -505,11 +505,11 @@ def configure_for_tests():
 
 def start():
     print(f"Launching {'API server' if '--nowebui' in sys.argv else 'Web UI'} with arguments: {' '.join(sys.argv[1:])}")
-    import UI
+    import ui
     if '--nowebui' in sys.argv:
-        UI.api_only()
+        ui.api_only()
     else:
-        UI.UI()
+        ui.ui()
 
     from modules_forge import main_thread
 

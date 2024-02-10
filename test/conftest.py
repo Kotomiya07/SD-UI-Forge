@@ -33,4 +33,4 @@ def mask_basic_image_base64() -> str:
 
 @pytest.fixture(scope="session")
 def initialize() -> None:
-    import UI  # noqa: F401
+    import ui  # noqa: F401
